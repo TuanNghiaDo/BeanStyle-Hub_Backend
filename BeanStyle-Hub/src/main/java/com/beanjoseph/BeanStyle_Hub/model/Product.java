@@ -57,7 +57,7 @@ public class Product {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "product_type_id", nullable = false)
     private ProductType productType;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -140,11 +140,11 @@ public class Product {
         this.productType = productType;
     }
 
-    public List<ProductImage> getimages() {
+    public List<ProductImage> getImages() {
         return images;
     }
 
-    public void setimages(List<ProductImage> images) {
+    public void setImages(List<ProductImage> images) {
         this.images = images;
     }
 
@@ -153,6 +153,11 @@ public class Product {
     }
 
     public void setSizes(Set<ProductSize> productSizes) {
+        this.productSizes = productSizes;
+    }
+
+
+    public void setProductSizes(Set<ProductSize> productSizes) {
         this.productSizes = productSizes;
     }
 

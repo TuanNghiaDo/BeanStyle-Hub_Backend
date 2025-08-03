@@ -20,7 +20,7 @@ public class Size {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "size_category_id")
     private SizeCategory sizeCategory;
 
     @Column(name = "name", nullable = false)
